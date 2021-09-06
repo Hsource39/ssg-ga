@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const {
   getArticleList,
@@ -27,12 +28,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(
   cors({
-    origin: ["https://ssg-ga.click"],
+    origin: ["https://ssg-ga.click", "http://localhost:3000"],
     credentials: true,
     methods: ["GET", "POST", "OPTIONS", "PATCH", "DELETE"],
   })
 );
 app.use(cookieParser());
+app.use(morgan("tiny"));
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
