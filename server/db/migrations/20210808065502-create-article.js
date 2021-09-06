@@ -11,11 +11,11 @@ module.exports = {
       author_id: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'user',
-          key: 'id'
+          model: "user",
+          key: "id",
         },
-        onUpdate: 'cascade',
-        onDelete: 'cascade'
+        onUpdate: "cascade",
+        onDelete: "cascade",
       },
       title: {
         allowNull: false,
@@ -26,21 +26,21 @@ module.exports = {
         type: Sequelize.STRING,
       },
       thumbnail_color: {
-        type: Sequelize.STRING(20000),
+        type: Sequelize.STRING(2000),
       },
       content: {
         allowNull: false,
-        type: Sequelize.STRING(20000),
+        type: Sequelize.STRING(2000),
       },
       tag: {
-        type: Sequelize.STRING(20000),
+        type: Sequelize.STRING(2000),
       },
       ingredient: {
-        type: Sequelize.STRING(20000),
+        type: Sequelize.STRING(2000),
       },
       like_user_id: {
         type: Sequelize.STRING,
-        defaultValue: "[]"
+        defaultValue: "[]",
       },
       createdAt: {
         allowNull: false,
